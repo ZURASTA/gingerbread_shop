@@ -50,6 +50,8 @@ defmodule GingerbreadShop.Service.Mixfile do
         [
             { :ecto, "~> 2.1" },
             { :postgrex, "~> 0.13.2" },
+            { :ecto_enum, "~> 1.0" },
+            { :geo, "~> 1.5" },
             { :protecto, github: "ScrimpyCat/Protecto" },
             { :defecto, github: "ScrimpyCat/Defecto", only: :test }
         ]
