@@ -3,6 +3,9 @@ defmodule GingerbreadShop.Service.Repo.Migrations.Store do
 
     def change do
         create table(:stores) do
+            add :entity, :uuid,
+                null: false
+
             add :public, :boolean,
                 null: false
 
@@ -16,6 +19,7 @@ defmodule GingerbreadShop.Service.Repo.Migrations.Store do
                 null: false
 
             add :address, :map,
+                default: "{}",
                 null: false
 
             add :place, :string,
@@ -25,12 +29,16 @@ defmodule GingerbreadShop.Service.Repo.Migrations.Store do
                 null: false
 
             add :services, :map,
+                default: "{}",
                 null: false
 
             add :assets, :map,
+                default: "{}",
                 null: false
 
             timestamps()
         end
+
+        create index(:stores, [:entity], unique: true)
     end
 end
