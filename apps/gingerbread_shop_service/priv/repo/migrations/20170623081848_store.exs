@@ -2,6 +2,8 @@ defmodule GingerbreadShop.Service.Repo.Migrations.Store do
     use Ecto.Migration
 
     def change do
+        GingerbreadShop.Service.Store.StatusEnum.create_type()
+
         create table(:stores) do
             add :entity, :uuid,
                 null: false
@@ -9,7 +11,7 @@ defmodule GingerbreadShop.Service.Repo.Migrations.Store do
             add :public, :boolean,
                 null: false
 
-            add :status, :string,
+            add :status, :store_status,
                 null: false
 
             add :name, :string,
@@ -22,8 +24,7 @@ defmodule GingerbreadShop.Service.Repo.Migrations.Store do
                 default: "{}",
                 null: false
 
-            add :place, :string,
-                null: false
+            add :place, :string
 
             add :geo, :geometry,
                 null: false
