@@ -75,6 +75,7 @@ defmodule GingerbreadShop.Service.Store.Model do
         struct
         |> cast(params, [:entity, :public, :status, :name, :phone, :address, :place, :geo, :services, :assets])
         |> validate_required([:entity, :public, :status, :name, :phone, :address, :geo, :services, :assets])
+        |> validate_phone_number(:phone)
         |> unique_constraint(:entity)
     end
 
@@ -105,6 +106,7 @@ defmodule GingerbreadShop.Service.Store.Model do
         |> validate_emptiness(:geo)
         |> validate_emptiness(:services)
         |> validate_emptiness(:assets)
+        |> validate_phone_number(:phone)
         |> unique_constraint(:entity)
     end
 end
