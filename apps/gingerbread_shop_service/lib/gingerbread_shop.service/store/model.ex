@@ -67,14 +67,12 @@ defmodule GingerbreadShop.Service.Store.Model do
       * `phone` field is required
       * `address` field is required
       * `geo` field is required
-      * `services` field is required
-      * `assets` field is required
       * checks uniqueness of the entity
     """
     def insert_changeset(struct, params \\ %{}) do
         struct
         |> cast(params, [:entity, :public, :status, :name, :phone, :address, :place, :geo, :services, :assets])
-        |> validate_required([:entity, :public, :status, :name, :phone, :address, :geo, :services, :assets])
+        |> validate_required([:entity, :public, :status, :name, :phone, :address, :geo])
         |> validate_phone_number(:phone)
         |> unique_constraint(:entity)
     end
@@ -90,8 +88,6 @@ defmodule GingerbreadShop.Service.Store.Model do
       * `phone` field is not empty
       * `address` field is not empty
       * `geo` field is not empty
-      * `services` field is not empty
-      * `assets` field is not empty
       * checks uniqueness of the entity
     """
     def update_changeset(struct, params \\ %{}) do
@@ -104,8 +100,6 @@ defmodule GingerbreadShop.Service.Store.Model do
         |> validate_emptiness(:phone)
         |> validate_emptiness(:address)
         |> validate_emptiness(:geo)
-        |> validate_emptiness(:services)
-        |> validate_emptiness(:assets)
         |> validate_phone_number(:phone)
         |> unique_constraint(:entity)
     end
