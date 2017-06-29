@@ -10,4 +10,5 @@ config :gingerbread_shop_service, GingerbreadShop.Service.Repo,
     password: "postgres",
     database: "gingerbread_shop_service_dev",
     hostname: "localhost",
-    pool_size: 10
+    pool_size: 10,
+    types: GingerbreadShop.Service.PostgresTypes

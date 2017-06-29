@@ -10,4 +10,5 @@ config :gingerbread_shop_service, GingerbreadShop.Service.Repo,
     password: "postgres",
     database: "gingerbread_shop_service_test",
     hostname: "localhost",
-    pool: Ecto.Adapters.SQL.Sandbox
+    pool: Ecto.Adapters.SQL.Sandbox,
+    types: GingerbreadShop.Service.PostgresTypes
