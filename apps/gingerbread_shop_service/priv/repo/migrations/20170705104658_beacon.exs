@@ -1,8 +1,11 @@
-defmodule GingerbreadShop.Service.Repo.Migrations.StoreBeacon do
+defmodule GingerbreadShop.Service.Repo.Migrations.Beacon do
     use Ecto.Migration
 
     def change do
-        create table(:store_beacons) do
+        create table(:beacons) do
+            add :store_id, references(:stores),
+                null: false
+
             add :proximity, :uuid,
                 null: false
 
@@ -13,6 +16,6 @@ defmodule GingerbreadShop.Service.Repo.Migrations.StoreBeacon do
             timestamps()
         end
 
-        create index(:store_beacons, [:proximity], unique: false)
+        create index(:beacons, [:proximity], unique: false)
     end
 end
