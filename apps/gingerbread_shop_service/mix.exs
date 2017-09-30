@@ -67,8 +67,7 @@ defmodule GingerbreadShop.Service.Mixfile do
     defp aliases do
         [
             "ecto.setup": ["ecto.create", "ecto.migrate"],
-            "ecto.reset": ["ecto.drop", "ecto.setup"],
-            "test": ["ecto.drop --quiet", "ecto.create --quiet", "ecto.migrate", "test"]
+            "ecto.reset": ["ecto.drop", "ecto.setup"]
         ]
     end
 end

@@ -21,8 +21,6 @@ defmodule GingerbreadShop.Service.Case do
             Ecto.Adapters.SQL.Sandbox.mode(GingerbreadShop.Service.Repo, { :shared, self() })
         end
 
-        :timer.sleep(100)
-
         :ok
     end
 end
