@@ -20,3 +20,5 @@ The database options can be configured by providing the config for the key `Ging
 For details on how to configure an [Ecto repo](https://hexdocs.pm/ecto/Ecto.Repo.html).
 
 __Note:__ If a PostgreSQL database is used, the service will create a custom type. For details on how to interact with this type, see the [EctoEnum docs](http://hexdocs.pm/ecto_enum).
+
+__Note:__ Relies on PostgreSQL for geo-spatial support (PostGIS extension).

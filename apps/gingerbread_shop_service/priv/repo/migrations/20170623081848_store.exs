@@ -2,7 +2,12 @@ defmodule GingerbreadShop.Service.Repo.Migrations.Store do
     use Ecto.Migration
 
     def change do
-        GingerbreadShop.Service.Store.StatusEnum.create_type()
+        store_status = if Application.get_env(:gingerbread_shop_service, GingerbreadShop.Service.Repo, adapter: Ecto.Adapters.Postgres)[:adapter] == Ecto.Adapters.Postgres do
+            GingerbreadShop.Service.Store.StatusEnum.create_type()
+            :store_status
+        else
+            :integer
+        end
 
         create table(:stores) do
             add :entity, :uuid,
@@ -11,7 +16,7 @@ defmodule GingerbreadShop.Service.Repo.Migrations.Store do
             add :public, :boolean,
                 null: false
 
-            add :status, :store_status,
+            add :status, store_status,
                 null: false
 
             add :name, :string,
