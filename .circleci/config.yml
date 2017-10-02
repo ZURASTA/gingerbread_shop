@@ -5,7 +5,7 @@ jobs:
       - image: circleci/elixir:latest
         environment:
           - MIX_ENV=test
-      - image: postgres:9.6.5-alpine
+      - image: mdillon/postgis:9.6-alpine
         environment:
           - POSTGRES_USER=postgres
           - POSTGRES_PASSWORD=postgres
