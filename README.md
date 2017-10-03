@@ -1,5 +1,8 @@
-[![Stories in Ready](https://badge.waffle.io/ZURASTA/gingerbread_shop.png?label=ready&title=Ready)](https://waffle.io/ZURASTA/gingerbread_shop?utm_source=badge)
 # gingerbread_shop
+
+[![Stories in Ready](https://badge.waffle.io/ZURASTA/gingerbread_shop.png?label=ready&title=Ready)](https://waffle.io/ZURASTA/gingerbread_shop?utm_source=badge)
+[![CircleCI](https://circleci.com/gh/ZURASTA/gingerbread_shop.svg?style=svg)](https://circleci.com/gh/ZURASTA/gingerbread_shop)
+
 Store management service
 
 
